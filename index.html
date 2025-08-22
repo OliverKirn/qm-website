@@ -7,16 +7,40 @@
   <title>OK – Quality Management Consulting & Training</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #222; background-color: #fff; }
-    header { background-color: #004080; color: #fff; padding: 2rem 1rem; text-align: center; }
+    header { background-color: #004080; color: #fff; padding: 2rem 1rem; text-align: center; position: relative; }
     header h1 { margin: 0; font-size: 2rem; }
     header p { font-size: 1.2rem; margin: 0.5rem 0; }
     nav { text-align: center; margin-top: 1rem; }
     nav a { background-color: #007bff; color: #fff; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px; display: inline-block; }
+
+    #lang-toggle { position: absolute; top: 10px; right: 20px; background: #fff; color: #004080; padding: 0.3rem 0.6rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+
     section { padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
     h2 { color: #004080; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem; }
     ul { list-style: none; padding-left: 1rem; }
     ul li::before { content: "✔️ "; margin-right: 0.5rem; }
     footer { background-color: #f5f5f5; color: #666; text-align: center; padding: 1rem; font-size: 0.9rem; }
+
+    .stamp {
+      position: fixed;
+      bottom: -100px;
+      right: 20px;
+      background: #004080;
+      color: white;
+      font-weight: bold;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transform: rotate(-10deg);
+      animation: flyin 2s ease-out forwards 1s;
+    }
+
+    @keyframes flyin {
+      to { bottom: 20px; }
+    }
+
+    .lang-de, .lang-en { display: none; }
+    .active-lang { display: block; }
   </style>
 </head>
 <body>
@@ -24,66 +48,77 @@
 <header>
   <h1>OK – Quality Management Consulting & Training</h1>
   <p>Ready for Quality – today & tomorrow</p>
-  <nav>
-    <a href="#kontakt">Jetzt Kontakt aufnehmen</a>
-  </nav>
+  <div id="lang-toggle">EN</div>
+  <nav><a href="#kontakt">Jetzt Kontakt aufnehmen</a></nav>
 </header>
 
-<section id="ueber-uns">
-  <h2>Über uns</h2>
-  <p>Mit über 20 Jahren Erfahrung und Expertise im Qualitätsbereich der Medizintechnik trainieren wir Sie fundiert, kompetent und lösungsorientiert. Wir sind spezialisiert auf die praxisnahe Qualifizierung von Mitarbeitenden im Qualitätsmanagement, der Qualitätssicherung & Regulatory Affairs – insbesondere von weniger spezialisierten Fachkräften bis hin zu branchenfremden Quereinsteigern. Unsere Trainingsdienstleistungen erfolgen in deutsch/ englisch sind sehr gut verständlich, sofort umsetzbar, effizient und jederzeit betriebswirtschaftlich messbar.</p>
-  <div style="text-align:center; margin-top:2rem;">
-    <img src="2507_Nikolay_Corporate_207.jpg" alt="Oliver Kirn – Unternehmensinhaber" style="max-width:100%; height:auto; border-radius:12px;">
-  </div>
-</section>
+<!-- Deutsch -->
+<div class="lang-de active-lang">
+  <section id="ueber-uns">
+    <h2>Über uns</h2>
+    <p>Mit über 20 Jahren Erfahrung im Qualitätsbereich der Medizintechnik beraten und trainieren wir Sie fundiert, kompetent und lösungsorientiert.</p>
+  </section>
+  <section id="leistungen">
+    <h2>Leistungen</h2>
+    <ul>
+      <li>Onboarding & Qualifizierung von Fachkräften</li>
+      <li>Qualitätsvorausplanung: APQP, FMEA etc.</li>
+      <li>Ausbildung interner Auditoren</li>
+      <li>Validierung, Risikomanagement</li>
+      <li>PRRC-Rolle & Produktregularien EU</li>
+    </ul>
+  </section>
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Oliver Kirn<br> Rosenstraße 3, 75328 Schömberg<br> ✉️ qm-consultant-kirn@web.de<br> ☎️ +49 163 5310819</p>
+  </section>
+</div>
 
-<section id="leistungen">
-  <h2>Leistungen</h2>
-  <ul>
-    <li><strong>Onboarding & Qualifizierung:</strong> Einführung und gezielte Schulung im Qualitätsmanagement und in der Qualitätssicherung</li>
-    <li><strong>Qualitätsvorausplanung:</strong> Einführung und gezielte Schulung für APQP, FMEA, Prüfplanung und Kontrollpläne für Entwicklung und Produktion</li>
-    <li><strong>Ausbildung interner Auditoren & Prozesseigner:</strong> Interdisziplinäres Training für funktionsübergreifende Qualitätssicherung</li>
-    <li><strong>Validierung & Risikomanagement:</strong> Einführung und gezielte Schulung zur Erstellung von Prozess- und Produktvalidierungen sowie Risikoanalysen</li>
-    <li><strong>Effizientes Lieferantenmanagement:</strong> Einführung und gezielte Schulung zur Bewertung, Auswahl und Entwicklung von Lieferanten nach regulatorischen Anforderungen</li>
-    <li><strong>PRRC (Responsible Person for Regulatory Compliance):</strong> Einführung und gezielte Schulung der PRRC-Rolle gemäß MDR inklusive vollständiger Verantwortungsübernahme für alle Produktregularien im EU-Markt</li>
-  </ul>
-</section>
+<!-- English -->
+<div class="lang-en">
+  <section id="about">
+    <h2>About us</h2>
+    <p>With over 20 years of experience in medical device quality management, we provide structured, competent and results-oriented consulting and training.</p>
+  </section>
+  <section id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Onboarding & qualification of staff</li>
+      <li>Advanced Quality Planning: APQP, FMEA etc.</li>
+      <li>Internal auditor training</li>
+      <li>Validation & risk management</li>
+      <li>PRRC role & regulatory compliance (EU)</li>
+    </ul>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Oliver Kirn<br> Rosenstraße 3, 75328 Schömberg, Germany<br> ✉️ qm-consultant-kirn@web.de<br> ☎️ +49 163 5310819</p>
+  </section>
+</div>
 
-<section id="zielgruppen">
-  <h2>Für wen wir arbeiten</h2>
-  <p>Unsere Leistungen richten sich an alle Unternehmen im Umfeld von Medizinprodukten, insbesondere:</p>
-  <ul>
-    <li>Produzierende Unternehmen</li>
-    <li>Hersteller und Inverkehrbringer</li>
-    <li>Händler und Importeure</li>
-    <li>Bevollmächtigte nach MDR/IVDR</li>
-    <li>Organisationen nach ISO 13485, 21 CFR Part 820 (FDA) und GMP</li>
-  </ul>
-</section>
-
-<section id="warum">
-  <h2>Warum OK?</h2>
-  <ul>
-    <li>Langjährige QM-Erfahrung in regulierten Branchen</li>
-    <li>Praxisnahe Umsetzung und verständliche Wissens- Vermittlung – auch für Quereinsteiger</li>
-    <li>Individuelles Training mit wirtschaftlichem Fokus</li>
-    <li>Effizient und betriebswirtschaftlich messbar</li>
-  </ul>
-</section>
-
-<section id="kontakt">
-  <h2>Kontakt</h2>
-  <p><strong>OK – Quality Management Consulting & Training</strong><br>
-  Oliver Kirn<br>
-  Rosenstraße 3<br>
-  75328 Schömberg, Deutschland<br>
-  ✉️ <a href="mailto:qm-consultant-kirn@web.de">qm-consultant-kirn@web.de</a><br>
-  ☎️ +49 163 5310819</p>
-</section>
+<div class="stamp">Jetzt mit Zufriedenheitsgarantie</div>
 
 <footer>
-  © 2025 OK – Quality Management Consulting & Training &middot; Impressum &middot; Datenschutz
+  © 2025 OK – Quality Management Consulting & Training · Impressum · Datenschutz
 </footer>
+
+<script>
+  const toggle = document.getElementById('lang-toggle');
+  const de = document.querySelector('.lang-de');
+  const en = document.querySelector('.lang-en');
+
+  toggle.addEventListener('click', () => {
+    if (de.classList.contains('active-lang')) {
+      de.classList.remove('active-lang');
+      en.classList.add('active-lang');
+      toggle.textContent = 'DE';
+    } else {
+      en.classList.remove('active-lang');
+      de.classList.add('active-lang');
+      toggle.textContent = 'EN';
+    }
+  });
+</script>
 
 </body>
 </html>
